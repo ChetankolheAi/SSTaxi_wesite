@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="footer.css">
     <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="navbar.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script>
+        gsap.from(".content", { opacity: 0, y: 50, duration: 1.5, ease: "power2.out" });
+    </script>
     <style>
         * {
             margin: 0;
@@ -40,29 +44,128 @@
             font-weight: bold;
             margin-left: 5px;
         }
-
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateX(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
         .hero {
-            margin-top: 80px;
-            height: 100%;
-            background-color:  rgb(0, 191, 255);
-        }
-        .hero-img{
-            width: 100%;
-            height: 100%;
-        }
-        .User-details{
+            position: relative;
+            height: 100vh;
+            background-color: rgb(0, 0, 0); /* Black background */
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: rgb(0, 191, 255);
-            margin: 0;
+            flex-direction: column;
         }
+        .hero-container{
+            max-width: 1500px;
+            z-index: 2;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(img/background.jpg);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5; /* Adjust this value (0 to 1) to control image transparency */
+            z-index: 1;
+        } 
+        .hero h1{
+            color: white;
+            font-size: 55px;
+            margin-bottom: 30px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out forwards;
+
+        }
+        .hero button{
+            z-index: 111;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(255, 178, 70);
+            transition: 0.3s ease-in-out;
+            border: none;
+            margin-bottom: 50px;
+            display: flex;
+            margin-left: 20px;
+            animation: fadeIn 1.5s ease-in-out forwards;
+
+            
+            
+        }
+        .hero a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+        .hero button:hover{
+            transform: translate(0,-5px);
+            transition: 0.3s ease-in-out;
+        }
+        .hero a:hover{
+            transform: translate(0,-0px);
+        }
+        #companyquots{
+            margin-bottom: 0;
+        }
+       #companyname{
+            padding: 0;
+            padding-left: 20px;
+            font-size: 35px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: #dedddd;
+       }
+       
+        .User-details {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(0, 0, 0);
+        
+            margin: 0;
+            width: 100%;
+            height: 50vh;
+            overflow: hidden;
+        }
+        
+        .User-details::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(15px);
+            background-image: url('img/Banner.avif');
+            
+            background-size: cover;
+            background-position: center;
+            opacity: 0.4;
+            z-index: 1;
+        }
+        
         .User-details input{
             height: 60px;
             border-radius: 8px;
             border: none;
             margin-bottom: 20px;
             margin-top: 10px;
+        }
+        .User-details h2{
+            
+            font-size: 50px;
+            margin-left: 20px;
+            
         }
         #button{
             height:60px ;
@@ -126,7 +229,8 @@
         .services {
             text-align: center;
             padding: 40px;
-            background-image: url(img/services-background.png);
+            /* background-image: url(img/background-services1.webp); */
+            background-color: #616161;
             background-repeat: no-repeat;
             background-size: cover;
             display: flex;
@@ -191,7 +295,7 @@
         }
         .services h1 {
             font-size: 40px;
-            color: #333;
+            color: #ffffff;
             margin-bottom: 20px;
         }
         
@@ -231,8 +335,8 @@
             border-radius: 10px;
         }
         
-        .card-back {
-            background: rgb(152, 188, 255);
+        .card-back{
+            background: linear-gradient(190deg ,rgb(65, 89, 138), white 100%);
             color: white;
             display: flex;
             justify-content: center;
@@ -419,6 +523,12 @@
                 padding: 30px;
                 padding-bottom: 20px;
             }
+            .User-details h2{
+                
+                font-size: 30px;
+                margin-left: 20px;
+                
+            }
         }
         @media (max-width: 370px) {
             .para-section p {
@@ -432,7 +542,7 @@
     <div class="container">
         <nav>
             <div class="logo">
-                <img src="img/logo.png" alt="Logo">
+                <img src="img/logo2.png" alt="Logo" >
             </div>
             <ul class="nav-links">
                 <li><a href="#">HOME</a></li>
@@ -463,29 +573,13 @@
             </div>
         </nav>
         <div class="hero">
-            <img src="img/image.png" class="hero-img" alt="">
+            <div class="hero-container">
+                <h1 style="z-index: 2;" id="companyquots">Driven by Safety, Powered by Trust.</h1>
+                <h1 style="z-index: 2;" id="companyname">SS_Taxi_Services_Pune.</h1>
+                <button style="z-index: 2;"><a href="#">Explore More</a></button>
+            </div>
         </div>
-        <div class="User-details">
-            <form action="" id="form">
-                <div class="name" id="input-label">
-                    <label for="name">Name</label>
-                    <input type="name" id="name">
-                </div>
-                <div class="email" id="input-label">
-                    <label for="name">Email</label>
-                    <input type="email" id="email">
-                </div>
-                <div class="Mobno" id="input-label">
-                    <label for="name">Mobile No.</label>
-                    <input type="mobileno" id="Mobno">
-                </div>
-                <div class="mssg" id="input-label"> 
-                    <label for="name">Message</label>
-                    <input type="mssg" id="mssg">
-                </div>
-                <button type="submit" id="button">Submit</button>
-            </form>
-        </div>
+     
         <div class="Question-section">
             <div class="para-section">
                 <h2>
@@ -499,8 +593,30 @@
                 </p>
             </div>
             
-            <img src="img/taxi-image.png" alt="">
+            <img src="img/taxi-image1.jpeg" alt="">
             
+        </div>
+        <div class="User-details">
+            <form action="" id="form" >
+                <!-- <div class="name" id="input-label" style="display: none;">
+                    <label for="name">Name</label>
+                    <input type="name" id="name">
+                </div>
+                <div class="email" id="input-label" style="display: none;">
+                    <label for="name">Email</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="Mobno" id="input-label" style="display: none;">
+                    <label for="name">Mobile No.</label>
+                    <input type="mobileno" id="Mobno">
+                </div>
+                <div class="mssg" id="input-label" style="display: none;"> 
+                    <label for="name">Message</label>
+                    <input type="mssg" id="mssg">
+                </div>
+                <button type="submit" id="button" style="display: none;">Submit</button> -->
+                <h2 style=" color: white; z-index:2;"> BOOK NOW AND ENJOY 20% OFF!</h2>
+            </form>
         </div>
         <div class="services">
             <h1>OUR SERVICES</h1>
@@ -737,17 +853,17 @@
                             OUR ADDRESS
                         </h2>
                         <p>
-                            <span style="color: #ffffff; font-size: 13px;">Shop No.3, Baloba Rajguru Patil Niwas,</span>
+                            <span style=" font-size: 13px;">Shop no 8, Anand Complex, Paud Rd,</span>
                             <br>
-                            <span style="color: #ffffff; font-size: 13px;">PMT Last Bus Stop, Behind Ganesh Mandir, </span>
+                            <span style="font-size: 13px;">opp. Kinara Hotel, near Vanaz Corner,</span>
                             <br>
-                            <span style="color: #ffffff; font-size: 13px;">Kharadi Gavthan, Kharadi, Pune.411014</span>
+                            <span style="font-size: 13px;">Vrindavan Colony, Alkapuri Society, Kothrud, Pune, Maharashtra 411038</span>
                         </p>
                         <p>
-                            <span style="color: #ffffff; font-size: 13px;">Phone :+919271596940, 8530691557, 8530692557</span>
+                            <span style=" font-size: 13px;">Phone :+91xxxxxxxxxx ,+91xxxxxxxxxx</span>
                         </p>
                         <p>
-                            <span style="color: #ffffff; font-size: 13px;">Email :&nbsp;<a style="color: #ffffff;" href="mailto:sainathcab@gmail.com">sainathcab@gmail.com</a></span>
+                            <span style=" font-size: 13px;">Email :&nbsp;<a style="color: #ffffff;" href="mailto:sainathcab@gmail.com">sstaxi@gmail.com</a></span>
                         </p>
                     </div>
                     <div class="quick-links">
@@ -781,7 +897,7 @@
                     </div>
                 </div>
                 <div class="license-footer">
-                    <p id="license">&copy; 2025 <a href="#">Sainath Cab Services</a>. All rights reserved.</p>
+                    <p id="license">&copy; 2025 <a href="#">SS Taxi Services</a>. All rights reserved.</p>
                     <p id="license" style="margin-left: 50px;">&copy;Designed By <a href="#">Chetan Kolhe</a>.</p>
         
                 </div>
