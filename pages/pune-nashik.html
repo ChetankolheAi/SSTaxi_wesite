@@ -3,9 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pune-Nashik</title>
+    <title>pune-to-Nashik</title>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="navbar.js"></script>
     <link rel="stylesheet" href="../navbar.css">
     <link rel="stylesheet" href="../footer.css">
+    <script src="../navbar.js"></script>
     <style>
         * {
             margin: 0;
@@ -13,13 +21,98 @@
             box-sizing: border-box;
             font-family: Raleway, Helvetica, Arial, sans-serif ;
         }
-        .hero{
-            background-color: rgb(198, 138, 255);
-            height: 100vh;
+        .hero {
+            position: relative;
+            height: 80vh;
+            background-color: rgb(0, 0, 0); /* Black background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
+        .hero-container{
+            max-width: 1500px;
+            z-index: 2;
+        }
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/nashik.jpeg);
+            background-size: cover;
+            background-position: center;
+            opacity: 0.5; /* Adjust this value (0 to 1) to control image transparency */
+            z-index: 1;
+        } 
+        .hero h1{
+            color: white;
+            font-size: 45px;
+            margin-bottom: 30px;
+            padding: 20px;
+            animation: fadeIn 1.5s ease-in-out forwards;
+
+        }
+        .hero button{
+            z-index: 111;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: rgb(255, 178, 70);
+            transition: 0.3s ease-in-out;
+            border: none;
+            margin-bottom: 50px;
+            display: flex;
+            margin-left: 20px;
+            animation: fadeIn 1.5s ease-in-out forwards;
+
+            
+            
+        }
+        .hero a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+        .hero button:hover{
+            transform: translate(0,-5px);
+            transition: 0.3s ease-in-out;
+        }
+        .hero a:hover{
+            transform: translate(0,-0px);
+        }
+       
         .info{
-            background-color: rgb(255, 255, 134);
-            height: 70vh;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(218, 218, 218);
+            padding: 80px;
+            padding-bottom: 20px;
+            
+        }
+        .info img{
+            height: 400px;
+        }
+        .para-section{
+            width: 500px;
+        }
+        .para-section h2{
+            font-family: Raleway, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            line-height: 1.42;
+            font-size: 35px;
+        }
+        .para-section p{
+            text-align: justify;
+            margin-right: 20px;
+            line-height: 1.42;
+            letter-spacing: 0em;
+            font-family: Raleway, Helvetica, Arial, sans-serif;
+            font-weight: lighter;
+            max-height: 500px;
+            width: 450px;
         }
         .banner{
             height: 30vh;
@@ -28,6 +121,110 @@
         .detail-info{
             height: 75vh;
             background-color: rgb(116, 116, 255);
+        }
+        
+        @media (max-width: 1150px) {
+
+            .info img {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 1050px) {
+           
+        }
+        @media (max-width: 1000px) {
+
+            .para-section p{
+                max-height: 500px;
+                width: 350px;
+            }
+        }
+        @media (max-width: 870px) {
+           
+            .para-section {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .para-section p{
+            
+                max-height: 500px;
+                width: 100%;
+            }
+            .info{
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 760px) {
+
+            .para-section p{
+                max-height: 500px;
+                width: 100%
+            }
+            
+        }
+        @media (max-width: 650px) {
+            
+            
+        }
+        
+        @media (max-width: 580px) {
+
+            
+        }
+        @media (max-width: 560px) {
+            
+            .para-section p{
+            
+                max-height: 500px;
+                width: 80%;
+            }
+            .info img {
+                height: 200px;
+            }
+            .para-section {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .para-section p {
+               
+                max-height: 500px;
+                width: 300px;
+            }
+            
+        }
+        @media (max-width: 500px) {
+            
+           
+            .info {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 30px;
+                padding-bottom: 20px;
+            }
+           
+        }
+        @media (max-width: 370px) {
+            .para-section p {
+                padding-left: 20px;
+                padding-right: 20px;
+                max-height: 600px;
+                width: 100%;
+            }
+            .info{
+                padding: 10px;
+            }
+            .info img{
+                height: 150px;
+            }
+           
         }
     </style>
 </head>
@@ -43,6 +240,7 @@
             <li class="services-menu">
                 <a href="#">SERVICES <i class="fa fa-caret-down"></i></a>
                 <ul class="drop-down-services">
+                    <li><a href="cars-on-rent.html">Outstation Rentals Cabs</a></li>
                     <li><a href="pune-shirdi.html">Pune to Shirdi</a></li>
                     <li><a href="pune-mumbai.html">Pune to Mumbai</a></li>
                     <li><a href="pune-goa.html">Pune to Goa</a></li>
@@ -65,20 +263,100 @@
         </div>
     </nav>
     <div class="hero">
-
+        <div class="hero-container">
+            <h1 style="z-index: 2;" id="companyquots">PUNE TO NASHIK , BOOK NOW !</h1>
+        </div>
     </div>
     
     <div class="info">
+        <div class="para-section">
+            <h2>
+                Outstation Rental Cabs – Comfortable & Affordable Travel!
+            </h2>
+            <p style="margin-bottom: 10px; margin-top:20px;" ali>
+                Looking for a reliable outstation cab service for your next trip? We offer comfortable, safe, and affordable rental cabs for long-distance travel. Whether you're planning a weekend getaway, business trip, or family vacation, our well-maintained fleet and experienced drivers ensure a smooth journey.<br>
 
+                Why Choose Our Outstation Cabs?<br>
+                ✔ <strong>Wide Range of Vehicles</strong> – Choose from sedans, SUVs, and tempo travelers.<br>
+                ✔ <strong>Pricing </strong>– Transparent fares with no hidden charges.<br>
+                ✔ <strong>Experienced Drivers</strong> – Professional and courteous chauffeurs for a safe ride.<br>
+                ✔ <strong>Flexible Booking </strong>– One-way, round trips, and multi-city travel options.<br>
+                ✔ <strong>24/7 Customer Support</strong> – We're here to assist you anytime.<br>
+                
+                <strong>Book your outstation cab today and enjoy a hassle-free ride to your destination! 🚖✨</strong><br>            </p>
+           
+        </div>
+        
+        <img src="../img/rental-services.jpeg" alt="">
+        
     </div>
 
-    <div class="banner">
+    <div class="info" style="background-color: rgb(65, 65, 65); ">
+        <img src="../img/Lonavala2.webp" alt=""style="margin-right: 20px; ">
+        <div class="para-section" style="margin-left: 20px; color: white ; ">
+            <h2>
+                Why Rent Cabs from Pune with SSTaxi?
+            </h2>
+            <p style="margin-bottom: 10px; margin-top:20px; line-height:3.2ch " >
+                🌍 Popular Outstation Destinations from Pune <br>
+                📍 Mumbai – Quick rides via Mumbai-Pune Expressway. <br>
+                📍 Lonavala & Khandala-Perfect for a refreshing weekend trip. <br>
+                📍 Mahabaleshwar–Explore the beautiful hills & strawberry. <br>
+                📍 Goa – Hit the beaches in comfort with a long-drive cab. <br>
+                📍 Shirdi & Nashik – Hassle-free pilgrimage travel. <br>
+                
+                <strong>Skip the stress of driving & public transport—choose SSTaxi for a safe, reliable, and comfortable ride!</strong><br>            
+            </p>
+           
+        </div>
+        
+        
+        
+    </div>
+    <div class="info" id="rules" >
+        
+        <div class="para-section" style="margin-left: 20px;  ">
+            <h2>
+                🚗 SSTaxi – Rental Cab Service Rules & Guidelines   
+            </h2>
+            <p style="margin-bottom: 10px; margin-top:20px; line-height:3.2ch " >
+                📍 General Rules <br>
+                ✅ Valid ID Proof Required – Passengers must carry a valid ID for verification. <br>
+                
+                ✅ Timely Reporting – The cab will wait for 15 minutes beyond the scheduled pickup time. Delays may incur extra charges. <br>
+                
+                ✅ Booking Confirmation – A successful booking will be confirmed via SMS/Email. <br>
+                
+                ✅ Fare Transparency – No hidden charges; all applicable tolls, parking, and state taxes are additional. <br>
+                
+                ✅ Trip Modifications – Any changes in destination or route must be informed in advance and may be subject to additional charges. <br>
+                
+                <strong>Skip the stress of driving & public transport—choose SSTaxi for a safe, reliable, and comfortable ride!</strong><br>           
+             </p>
+           
+        </div>
+        <div class="para-section" style="margin-left: 20px;  ">
+            <h2>
+                ⏳ Cancellation & Refund Policy
+            </h2>
+            <p style="margin-bottom: 10px; margin-top:20px; line-height:3.2ch " >
+                ✅Free Cancellation – Cancel within 12 hours of booking to avoid cancellation fees. <br>
 
+                ✅ Late Cancellation Charges – If canceled within 3 hours of pickup, 50% of the fare will be charged. <br>
+
+                
+                ✅ No-Show Policy – If the passenger is unreachable after 30 minutes of scheduled time, the ride will be considered canceled with no refund. <br>
+                <strong>📞 Need help? Contact our support team 24/7! 🚖✨</strong><br>           
+             </p>
+           
+        </div>
+        
+        
+        
+        
     </div>
 
-    <div class="detail-info">
-
-    </div>
+    
     <footer>
         <div class="footer-container">
             <div class="inner-container">
@@ -138,5 +416,20 @@
         </div>
         
     </footer>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector(".nav-links");
+            const hamburger = document.querySelector(".hamburger i");
+            navLinks.classList.toggle("show");
+            
+            if (navLinks.classList.contains("show")) {
+                hamburger.classList.remove("fa-bars");
+                hamburger.classList.add("fa-times");
+            } else {
+                hamburger.classList.remove("fa-times");
+                hamburger.classList.add("fa-bars");
+            }
+        } 
+    </script>
 </body>
 </html>
