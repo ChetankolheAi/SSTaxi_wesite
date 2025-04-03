@@ -1,0 +1,152 @@
+* {
+    margin: 0;
+    
+    
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+}
+.footer-container{
+    background-color: rgb(37, 37, 37);
+    padding-bottom: 20px;
+    
+    
+}
+#license{
+    color: rgb(114, 114, 114);
+    display: flex;
+   
+    
+    justify-content: center;
+    font-weight: 500;
+
+}
+#license a{
+    text-decoration: none;
+    color: rgb(0, 106, 255);
+}
+.inner-container{
+        
+        display: flex;
+        width: 100%;
+        padding: 20px;
+        justify-content: center;
+
+}
+.inner-container li{
+    color: white;
+}
+.inner-container a{
+    text-decoration: none;
+    color: rgb(0, 81, 255);
+}
+.inner-container h2{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+.address{
+    margin-left: 50px;
+    
+}
+.address p{
+    line-height: 3ch;
+}
+.quick-links{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+.quick-links ul{
+    line-height: 3ch;
+    margin-left: 40px;
+}
+.our-services{
+    margin-left: 100px;
+}
+.our-services h2{
+    margin: 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+.inner-services{
+    display: flex;
+}
+.inner-services ul{
+    line-height: 3ch;
+    margin-left: 40px;
+}
+.license-footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 30px;
+    
+}
+@media(max-width:869px){
+    .inner-container{
+        flex-direction: column;
+    }
+    .our-services {
+        margin-left: 50px;
+    }
+    
+}
+@media(max-width:650px){
+    
+    .license-footer {
+   
+        flex-direction: column;
+    }
+    #license{
+        margin-top: 10px;
+    }
+}
+@media(max-width:500px){
+    .address {
+        margin-left: 20px;
+    }
+    .quick-links {
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+    .our-services {
+        margin-left: 20px;
+    }
+}
+@media(max-width:400px){
+    .address {
+        margin-left: 10px;
+    }
+    .quick-links {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    .our-services {
+        margin-left: 10px;
+    }
+    .inner-services{
+        
+        flex-direction: column;
+    }
+    #license{
+        font-size: 15px;
+    }
+}
+@media(max-width:320px){
+    .address {
+        margin-left: 5px;
+    }
+    .quick-links {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    .our-services {
+        margin-left: 5px;
+    }
+    .inner-services{
+        
+        flex-direction: column;
+    }
+    #license{
+        font-size: 12px;
+    }
+}

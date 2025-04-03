@@ -1,0 +1,139 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+}
+
+nav {
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+    height: 80px;
+    background-color: rgb(59, 118, 147);
+    padding: 0 20px;
+    z-index: 1000;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+ 
+    padding: 10px;
+    transition: 0.3s;
+    font-weight: 700;
+}
+
+.nav-links a:hover {
+    color: orange;
+}
+
+.services-menu:hover .drop-down-services {
+    display: block;
+}
+
+.drop-down-services {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    width: 200px;
+    display: none;
+    list-style: none;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.drop-down-services li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.drop-down-services li:last-child {
+    border-bottom: none;
+}
+
+.drop-down-services li a {
+    color: #333;
+    font-size: 16px;
+    display: block;
+}
+
+.drop-down-services li a:hover {
+    background: orange;
+    color: white;
+}
+
+.contact-info {
+    display: flex;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+}
+
+.contact-info i {
+    margin-right: 8px;
+}
+
+.hamburger {
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: none;
+}
+
+@media (max-width: 830px) {
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 80px;
+        right: 0;
+        background: #7fc5ff;
+        width: 250px;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        display: none;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .services-menu .drop-down-services {
+        position: static;
+        display: none;
+        background: #ffbaba;
+        width: 100%;
+    }
+
+    .services-menu.active .drop-down-services {
+        display: block;
+    }
+}

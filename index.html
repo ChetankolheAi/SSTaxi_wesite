@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaiCab-Services</title>
+    <script src="https://kit.fontawesome.com/YOUR_KIT_CODE.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="footer.css">
+    <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="navbar.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Raleway, Helvetica, Arial, sans-serif ;
+        }
+
+      hr{
+        display: none;
+      }
+        
+        label{
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+        }
+        a{
+            transition: 0.3s ease-in-out;
+        }
+         a:hover{
+            transition: 0.3s ease-in-out;
+            transform: translate(0,-5px);
+         }
+       
+        span {
+            color: white;
+            font-weight: bold;
+            margin-left: 5px;
+        }
+
+        .hero {
+            margin-top: 80px;
+            height: 100%;
+            background-color:  rgb(0, 191, 255);
+        }
+        .hero-img{
+            width: 100%;
+            height: 100%;
+        }
+        .User-details{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(0, 191, 255);
+            margin: 0;
+        }
+        .User-details input{
+            height: 60px;
+            border-radius: 8px;
+            border: none;
+            margin-bottom: 20px;
+            margin-top: 10px;
+        }
+        #button{
+            height:60px ;
+            border-radius: 8px;
+            width: 200px;
+            border: none;
+            background-color: #086AD8;
+            color: white;
+            transition: 0.3s ease-in-out ;
+        }
+        #button:hover{
+            transform: translate(0,-5px);
+            transition: 0.3s ease-in-out ;
+        }
+        #input-label{
+            display: flex;
+            flex-direction: column;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+        #form{
+            margin-top: 20px;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+        }
+        #form button{
+            margin-top: 10px;
+        }
+        .Question-section{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(218, 218, 218);
+            padding: 80px;
+            padding-bottom: 20px;
+            
+        }
+        .Question-section img{
+            height: 400px;
+        }
+        .para-section{
+            width: 500px;
+        }
+        .para-section h2{
+            font-family: Raleway, Helvetica, Arial, sans-serif;
+            font-weight: 700;
+            line-height: 1.42;
+            font-size: 35px;
+        }
+        .para-section p{
+            text-align: justify;
+            margin-right: 20px;
+            line-height: 1.42;
+            letter-spacing: 0em;
+            font-family: Raleway, Helvetica, Arial, sans-serif;
+            font-weight: lighter;
+            max-height: 500px;
+            width: 450px;
+        }
+        .services {
+            text-align: center;
+            padding: 40px;
+            background-image: url(img/services-background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        
+        .services h1{
+            font-family:Raleway, Helvetica, Arial, sans-serif ;
+            font-size: 50px;
+            font-weight: 700;
+            color: rgb(255, 255, 255);
+        }
+        .services h1:hover{
+            
+            color: rgb(255, 255, 255);
+        }
+       
+        .services-card {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr); 
+            gap: 10px;
+             width: 100%;
+            justify-content: center;
+            padding: 20px;
+            padding-left:200px ;
+            padding-right:200px ;
+            padding-top: 60px;
+            align-items: center;
+            max-width: 1500px;
+            
+        }
+        
+        .card {
+            
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+            text-align: center;
+            border-radius: 10px;
+            height: 300px;
+            width: 250px;
+            margin-bottom: 20px;
+           
+            
+        }
+        .services-card h2{
+            margin-bottom: 25px;
+            font-size: 20px;
+            font-family: "Sora", sans-serif;
+            font-weight: 600;
+            color: black;
+            
+        }
+        .card img{
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.268);
+            height: 90%;
+        }
+        .services h1 {
+            font-size: 40px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        
+        .card {
+            width: 250px;
+            height: 300px;
+            perspective: 1000px; /* Enables 3D effect */
+        }
+        .card-front {
+            margin-bottom: 20px;
+        }
+        .card-inner {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            margin-bottom: 20px;
+        }
+        
+        .card:hover .card-inner {
+            transform: rotateY(180deg);
+        }
+        
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 10px;
+        }
+        
+        .card-front img {
+            width: 100%;
+            height: 90%;
+            border-radius: 10px;
+        }
+        
+        .card-back {
+            background: rgb(152, 188, 255);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateY(180deg);
+            border-radius: 10px;
+            flex-direction: column;
+        }
+        .card-back p{
+            font-weight: 500;
+            color: black;
+            text-align: justify;
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            font-size: 14px;
+        }
+        .card-back h2{
+           
+            width: 100%;
+            padding-left: 20px;
+            padding-right: 20px;
+            
+        }
+        
+        .card-back button {
+            padding: 12px 20px;
+            font-size: 16px;
+            border: none;
+            background: rgb(255, 128, 0);
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        
+        .card-back button:hover {
+            background: darkorange;
+        }
+        @media (max-width: 1150px) {
+
+            .services-card {
+              
+                grid-template-columns: repeat(3, 1fr); 
+        
+            }
+            .Question-section img {
+                height: 300px;
+            }
+        }
+        
+        @media (max-width: 1050px) {
+            .User-details input {
+                height: 50px;
+                width: 110px;
+            }
+            #button {
+                height: 50px;
+                width: 100px;
+            }
+        }
+        @media (max-width: 1000px) {
+
+            .para-section p{
+                max-height: 500px;
+                width: 350px;
+            }
+        }
+        @media (max-width: 870px) {
+            .services-card {
+               
+                grid-template-columns: repeat(2, 1fr); 
+                 
+            }
+            .para-section {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .para-section p{
+            
+                max-height: 500px;
+                width: 100%;
+            }
+            .Question-section{
+                flex-direction: column;
+            }
+        }
+        @media (max-width: 760px) {
+
+            .para-section p{
+                max-height: 500px;
+                width: 100%
+            }
+            
+        }
+        @media (max-width: 650px) {
+            
+            .User-details input {
+    
+                width: 70px;
+            }
+            #input-label{
+                
+                font-size: 15px;
+            }
+            #button {
+                height: 40px;
+                width: 70px;
+                
+            }
+        }
+        
+        @media (max-width: 580px) {
+
+            .services-card {
+                grid-template-columns: repeat(1, 1fr); 
+            }
+        }
+        @media (max-width: 560px) {
+            .services-card {
+               
+              
+                justify-content: center;
+                padding: 20px;
+                padding-left: 100px;
+                padding-right: 100px;
+                padding-top: 60px;
+                align-items: center;
+            }
+            .para-section p{
+            
+                max-height: 500px;
+                width: 80%;
+            }
+            .Question-section img {
+                height: 200px;
+            }
+            .para-section {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+            }
+            .para-section p {
+               
+                max-height: 500px;
+                width: 300px;
+            }
+        
+        }
+        @media (max-width: 500px) {
+            .User-details input {
+                width:100%;
+                
+            }
+            #input-label {
+                font-size: 15px;
+                width: 100%;
+                margin-left:70px;
+                margin-right:70px;
+                padding-left: 20px;
+                padding-right: 20px;
+                
+            }
+            #form{
+                flex-direction: column;
+                width: 100%;
+            }
+            #button {
+                height: 40px;
+                
+                width: 80%;
+                
+            }
+            .Question-section {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 30px;
+                padding-bottom: 20px;
+            }
+        }
+        @media (max-width: 370px) {
+            .para-section p {
+                max-height: 500px;
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <div class="logo">
+                <img src="img/logo.png" alt="Logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">HOME</a></li>
+                <li><a href="#">ABOUT US</a></li>
+                <li><a href="#">CONTACT US</a></li>
+                <li class="services-menu">
+                    <a href="#">SERVICES <i class="fa fa-caret-down"></i></a>
+                    <ul class="drop-down-services">
+                        <li><a href="#">Pune to Shirdi</a></li>
+                        <li><a href="#">Pune to Mumbai</a></li>
+                        <li><a href="#">Pune to Nashik</a></li>
+                        <li><a href="#">Pune to Nashik</a></li>
+                        <li><a href="#">Pune to Nashik</a></li>
+                        <li><a href="#">Pune to Nashik</a></li>
+                        <li><a href="#">Pune to Nashik</a></li>
+                        <li><a href="#">Pune to Nashik</a></li>
+                        <li><a href="#">Pune to Nashik</a></li>
+                        <li><a href="#">Pune to Nashik</a></li>
+                    </ul>
+                </li>
+                <li class="contact-info">
+                    <i class="fa fa-phone"></i>
+                    <span>+91 9058896355</span>
+                </li>
+            </ul>
+            <div class="hamburger" onclick="toggleMenu()">
+                <i class="fa fa-bars"></i>
+            </div>
+        </nav>
+        <div class="hero">
+            <img src="img/image.png" class="hero-img" alt="">
+        </div>
+        <div class="User-details">
+            <form action="" id="form">
+                <div class="name" id="input-label">
+                    <label for="name">Name</label>
+                    <input type="name" id="name">
+                </div>
+                <div class="email" id="input-label">
+                    <label for="name">Email</label>
+                    <input type="email" id="email">
+                </div>
+                <div class="Mobno" id="input-label">
+                    <label for="name">Mobile No.</label>
+                    <input type="mobileno" id="Mobno">
+                </div>
+                <div class="mssg" id="input-label"> 
+                    <label for="name">Message</label>
+                    <input type="mssg" id="mssg">
+                </div>
+                <button type="submit" id="button">Submit</button>
+            </form>
+        </div>
+        <div class="Question-section">
+            <div class="para-section">
+                <h2>
+                    Why do We use Car Rental Service Pune?
+                </h2>
+                <p style="margin-bottom: 10px; margin-top:20px;" ali>
+                    While there are the most interesting places to travel around, perfects conveyance will let you embrace the best experiences ever. Improper conveyance could be really very annoying when you desire for some extraordinary experiences. Sainath cabs could prove to be the most suitable car rental Pune, to let you explore places at the easiest. You can reach out to the most exciting destinations with the utmost comfort.
+                </p>
+                <p style="margin-bottom: 10px; ">
+                    You could never deny that road trips add on some extra pleasure to traveling and make it even more worthwhile. Having a vehicle with you that feels and serves absolutely like your own could be the best thing happening to you. You have all the freedom to do what you prefer to and wherever you want to proceed all through your trip. Sainath cabs offer you the extreme luxury and perfection that you might be seeking from any car rental services around you.
+                </p>
+            </div>
+            
+            <img src="img/taxi-image.png" alt="">
+            
+        </div>
+        <div class="services">
+            <h1>OUR SERVICES</h1>
+            <div class="services-card">
+    
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/shirdi.png" alt="Pune to Shirdi">
+                            <h2>
+                                Pune to Shirdi
+                            </h2>
+                        </div>
+                        <div class="card-back">
+                            <h2>Pune To Shirdi</h2>
+                            <p>Traveling places becomes even more interesting when you have the most suitable means to visit places. While cabs could make traveling</p>
+                            <a href="pages/pune-shirdi.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/mahabaleshwar.jpeg" alt="Pune to Mahabaleshwar">
+                            <h2>
+                                Pune to Mahabaleshwar
+                            </h2>
+                            
+                        </div>
+                        <div class="card-back">
+                            <h2>
+                                Pune <hr>to Mahabaleshwar
+                            </h2>
+                            <p>Mumbai and Pune are India’s two major hubs are commonly visited by tourists. Mumbai is a city full of immense monuments, malls</p>
+                            <a href="pages/pune-mahabaleshwar.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/Astavinayak.webp" alt="Pune to Astavinayak">
+                            <h2>
+                                Pune to Astavinayak
+                            </h2>
+                        </div>
+                        <div class="card-back">
+                            <h2>
+                                Pune to Astavinayak
+                            </h2>
+                            <p>There are amazing places to travel and explore around Mumbai and Pune that will bring you some absolutely pleasant experiences</p>
+                            <a href="pages/pune-astavinayak.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/Bhimashankar.webp" alt="Pune to Bhimashankar">
+                            <h2>
+                                Pune to Bhimashankar
+                            </h2>
+                        </div>
+                        
+                        <div class="card-back">
+                            <h2>
+                                Pune to Bhimashankar
+                            </h2>
+                            <p>Pune to Nashik is one of the most popular routes widely known as the best pilgrimage destination among the Rama’s Devotees. It is highly</p>
+                            <a href="pages/pune-bhimashankar.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/Aurangabad.webp" alt="Pune to Bhimashankar">
+                            <h2>
+                                Pune to Aurangabad
+                            </h2>
+                        </div>
+                        
+                        <div class="card-back">
+                            <h2>
+                                Pune to Aurangabad
+                            </h2>
+                            <p>Aurangabad city is popular for its cultural heritage and medieval monuments. The city is home to Bibi-Ka-Makbara, a famous tomb</p>
+                            <a href="pages/pune-aurangabad.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/Nashik.png" alt="Pune to Bhimashankar">
+                            <h2>
+                                Pune to Nashik
+                            </h2>
+                        </div>
+                        
+                        <div class="card-back">
+                            <h2>
+                                Pune to Nashik
+                            </h2>
+                            <p>Those residing in Pune or Mumbai consider it as a blessing that they have the most popular hill stations of Khandala and Lonavala just</p>
+                            <a href="pages/pune-nashik.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/Lonavala.jpeg" alt="Pune to Bhimashankar">
+                            <h2>
+                                Pune to Lonavala
+                            </h2>
+                        </div>
+                        
+                        <div class="card-back">
+                            <h2>
+                                Pune to Lonavala
+                            </h2>
+                            <p>Lonavla is a beautiful escape from the hustle of life to get a beautiful and chilled getaway. it is situated in the state of Maharashtra
+                            </p>
+                            <a href="pages/pune-lonavala.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/panchjotriling.png" alt="Pune to Bhimashankar">
+                            <h2>
+                                Pune to Panch Jyotriling
+                            </h2>
+                        </div>
+                        
+                        <div class="card-back">
+                            <h2>
+                                Pune to Panch Jyotriling
+                            </h2>
+                            <p>
+                            Pilgrimage tours are quite common around Pune, within Maharashtra. There are also some of the Jyotirlingas that are considered as some</p>
+                            <a href="pages/pune-panchjyutirlinga.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/Lavasa.avif" alt="Pune to Bhimashankar">
+                            <h2>
+                                Pune to Lavasa
+                            </h2>
+                        </div>
+                        
+                        <div class="card-back">
+                            <h2>
+                                Pune to Lavasa
+                            </h2>
+                            <p>There are amazing places to travel and explore around Mumbai and Pune that will bring you some absolutely pleasant experiences</p>
+                            <a href="pages/pune-lavasa.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/Mumbai.png" alt="Pune to Bhimashankar">
+                            <h2>
+                                Pune to Mumbai
+                            </h2>
+                        </div>
+                        
+                        <div class="card-back">
+                            <h2>
+                                Pune to Mumbai
+                            </h2>
+                            <p>Mumbai and Pune are India’s two major hubs are commonly visited by tourists. Mumbai is a city full of immense monuments, malls</p>
+                            <a href="pages/pune-mumbai.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/Goa.png" alt="Pune to Bhimashankar">
+                            <h2>
+                                Pune to Goa
+                            </h2>
+                        </div>
+                        
+                        <div class="card-back">
+                            <h2>
+                                Pune to Goa
+                            </h2>
+                            <p>Traveling places becomes even more interesting when you have the most suitable means to visit places. While cabs could make traveling</p>
+                            <a href="pages/pune-goa.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-inner">
+                        <div class="card-front">
+                            <img src="img/Caronrent.png" alt="Pune to Bhimashankar">
+                            <h2>
+                                OutStation Cabs Pune 
+                            </h2>
+                        </div>
+                        
+                        <div class="card-back">
+                            <h2>
+                                OutStation Cabs Pune 
+                            </h2>
+                            <p>Traveling various places could turn out to be even more interesting when you have the most suitable options to accomplish</p>
+                            <a href="pages/cars-on-rent.html"><button>Read More</button></a>
+                        </div>
+                    </div>
+                </div>
+    
+            </div>
+            
+                
+        </div>
+            
+        <footer>
+            <div class="footer-container">
+                <div class="inner-container">
+                    <div class="address">
+                        <h2>
+                            OUR ADDRESS
+                        </h2>
+                        <p>
+                            <span style="color: #ffffff; font-size: 13px;">Shop No.3, Baloba Rajguru Patil Niwas,</span>
+                            <br>
+                            <span style="color: #ffffff; font-size: 13px;">PMT Last Bus Stop, Behind Ganesh Mandir, </span>
+                            <br>
+                            <span style="color: #ffffff; font-size: 13px;">Kharadi Gavthan, Kharadi, Pune.411014</span>
+                        </p>
+                        <p>
+                            <span style="color: #ffffff; font-size: 13px;">Phone :+919271596940, 8530691557, 8530692557</span>
+                        </p>
+                        <p>
+                            <span style="color: #ffffff; font-size: 13px;">Email :&nbsp;<a style="color: #ffffff;" href="mailto:sainathcab@gmail.com">sainathcab@gmail.com</a></span>
+                        </p>
+                    </div>
+                    <div class="quick-links">
+                        <h2>QUICK LINKS</h2>
+                        <ul>
+                            <li><a href="">About us</a></li>
+                            <li><a href="">Payment</a></li>
+                            <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="our-services">
+                        <h2>OUR SERVICES</h2>
+                        <div class="inner-services">
+                            <ul>
+                                <li><a href="">Ashtavinayak Darshan</a></li>
+                                <li><a href="">Pune TO Lavasa</a></li>
+                                <li><a href="">Pune TO Nashik</a></li>
+                                <li><a href="">Pune TO Goa</a></li>
+                                <li><a href="">Pune TO Lonavala</a></li>
+                                <li><a href="">Pune TO Aurangabad</a></li>
+                            </ul>
+                            <ul>
+                                <li><a href="">Pune TO Bhimashankar</a></li>
+                                <li><a href="">Pune TO Panch Jyotirlingas</a></li>
+                                <li><a href="">Pune TO Mahabaleshwar</a></li>
+                                <li><a href="">Pune TO Shirdi</a></li>
+                                <li><a href="">Pune TO Mumbai</a></li>
+                                <li><a href="">Cars On Rent Services</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="license-footer">
+                    <p id="license">&copy; 2025 <a href="#">Sainath Cab Services</a>. All rights reserved.</p>
+                    <p id="license" style="margin-left: 50px;">&copy;Designed By <a href="#">Chetan Kolhe</a>.</p>
+        
+                </div>
+            </div>
+            
+        </footer>
+    </div>
+    <script>
+        function toggleMenu() {
+            const navLinks = document.querySelector(".nav-links");
+            const hamburger = document.querySelector(".hamburger i");
+            navLinks.classList.toggle("show");
+            
+            if (navLinks.classList.contains("show")) {
+                hamburger.classList.remove("fa-bars");
+                hamburger.classList.add("fa-times");
+            } else {
+                hamburger.classList.remove("fa-times");
+                hamburger.classList.add("fa-bars");
+            }
+        }
+    </script>
+</body>
+
+</html>
