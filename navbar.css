@@ -56,18 +56,21 @@ nav {
     position: absolute;
     top: 100%;
     left: 0;
-    background: white;
+    backdrop-filter: blur(20px);
     width: 200px;
     display: none;
     list-style: none;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
     z-index: 100;
+    
 }
 
 .drop-down-services li {
     padding: 10px;
     border-bottom: 1px solid #ddd;
+    color: white;
+   
 }
 
 .drop-down-services li:last-child {
@@ -75,14 +78,14 @@ nav {
 }
 
 .drop-down-services li a {
-    color: #333;
+    color: #ffffff;
     font-size: 16px;
     display: block;
 }
 
 .drop-down-services li a:hover {
-    background: orange;
-    color: white;
+    
+    color: rgb(255, 153, 0);
 }
 
 .contact-info {
@@ -113,8 +116,9 @@ nav {
     .nav-links {
         position: absolute;
         top: 80px;
-        
-        background: #7fc5ff;
+        right: 0px;
+        background: #c8e6ff00;
+        backdrop-filter: blur(30px);
         width: 250px;
         flex-direction: column;
         align-items: flex-start;
@@ -128,12 +132,14 @@ nav {
 
     .nav-links.show {
         display: flex;
+        
     }
 
     .services-menu .drop-down-services {
         position: static;
         display: none;
-        background: #ffbaba;
+        background: #f8f8f800;
+        backdrop-filter: blur(20px);
         width: 100%;
     }
 
